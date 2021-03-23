@@ -139,7 +139,7 @@ config-file=config_infer_secondary_vehiclemakenet.txt
 
 [secondary-gie1]
 enable=1
-model-engine-file=../../models/tlt_pretrained_models/vehicletypenet/resnet18_vehicletypenet_pruned.etlt_b32_gpu0_int8.engine
+model-engine-file=../../models/tlt_pretrained_models/vehicletypenet/resnet18_vehicletypenet_pruned.etlt_b200_gpu0_int8.engine
 gpu-id=0
 batch-size=200
 gie-unique-id=5
