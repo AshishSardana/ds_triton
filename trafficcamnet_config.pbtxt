@@ -1,0 +1,31 @@
+name: "trafficcamnet"
+platform: "tensorrt_plan"
+max_batch_size: 40
+default_model_filename: "resnet18_trafficcamnet_pruned.etlt_b40_gpu0_int8.engine"
+input [
+  {
+    name: "input_1"
+    data_type: TYPE_FP32
+    format: FORMAT_NCHW
+    dims: [3, 544, 960]
+  }
+]
+output [
+  {
+    name: "output_bbox/BiasAdd"
+    data_type: TYPE_FP32
+    dims: [16, 34, 60]
+  },
+  {
+    name: "output_cov/Sigmoid"
+    data_type: TYPE_FP32
+    dims: [4, 34, 60]
+  }
+]
+instance_group [
+  {
+    kind: KIND_GPU
+    count: 1
+    gpus: 0
+  }
+]
