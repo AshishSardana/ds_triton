@@ -70,7 +70,7 @@ font=Arial
 enable=1
 gpu-id=0
 # Modify as necessary
-model-engine-file=../../models/tlt_pretrained_models/trafficcamnet/resnet18_trafficcamnet_pruned.etlt_b200_gpu0_int8.engine
+model-engine-file=../../models/tlt_pretrained_models/trafficcamnet/resnet18_trafficcamnet_pruned.etlt_b40_gpu0_int8.engine
 batch-size=40
 #Required by the app for OSD, not a plugin property
 bbox-border-color0=1;0;0;1
