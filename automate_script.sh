@@ -49,9 +49,9 @@ cp ds_triton/engine_bs/config_infer_secondary_vehicletypenet.txt /opt/nvidia/dee
 cp ds_triton/engine_bs/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt
 
 # creating the engine files
-deepstream-app -c /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_trafficcamnet.txt
+#deepstream-app -c /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_trafficcamnet.txt
 
-deepstream-app -c /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt
+#deepstream-app -c /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt
 
 #################################################################################################################################
 
@@ -75,9 +75,9 @@ mkdir -p trtis_model_repo/Secondary_VehicleTypes/1
 
 cd /opt/nvidia/deepstream/deepstream-5.1/samples/
 
-cp models/tlt_pretrained_models/trafficcamnet/resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine trtis_model_repo/trafficcamnet/1/resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine
+cp /ds_triton/engines/2g.10gb/resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine trtis_model_repo/trafficcamnet/1/resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine
 
-cp models/tlt_pretrained_models/vehicletypenet/resnet18_vehicletypenet_pruned.etlt_b200_gpu0_int8.engine trtis_model_repo/Secondary_VehicleTypes/1/resnet18_vehicletypenet_pruned.etlt_b200_gpu0_int8.engine
+cp /ds_triton/engines/2g.10gb/resnet18_vehicletypenet_pruned.etlt_b200_gpu0_int8.engine trtis_model_repo/Secondary_VehicleTypes/1/resnet18_vehicletypenet_pruned.etlt_b200_gpu0_int8.engine
 
 # moving the config.txt and source files
 cd ~/..
