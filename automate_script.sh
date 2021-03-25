@@ -75,7 +75,7 @@ mkdir -p trtis_model_repo/Secondary_VehicleTypes/1
 
 cd /opt/nvidia/deepstream/deepstream-5.1/samples/
 
-cp models/tlt_pretrained_models/trafficcamnet/resnet18_trafficcamnet_pruned.etlt_b40_gpu0_int8.engine trtis_model_repo/trafficcamnet/1/resnet18_trafficcamnet_pruned.etlt_b40_gpu0_int8.engine
+cp models/tlt_pretrained_models/trafficcamnet/resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine trtis_model_repo/trafficcamnet/1/resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine
 
 cp models/tlt_pretrained_models/vehicletypenet/resnet18_vehicletypenet_pruned.etlt_b200_gpu0_int8.engine trtis_model_repo/Secondary_VehicleTypes/1/resnet18_vehicletypenet_pruned.etlt_b200_gpu0_int8.engine
 
