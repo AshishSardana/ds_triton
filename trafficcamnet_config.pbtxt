@@ -1,7 +1,7 @@
 name: "trafficcamnet"
 platform: "tensorrt_plan"
-max_batch_size: 35
-default_model_filename: "resnet18_trafficcamnet_pruned.etlt_b40_gpu0_int8.engine"
+max_batch_size: 50
+default_model_filename: "resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine"
 input [
   {
     name: "input_1"

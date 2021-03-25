@@ -22,7 +22,7 @@
 
 name: "Secondary_VehicleTypes"
 platform: "tensorrt_plan"
-max_batch_size: 140
+max_batch_size: 200
 default_model_filename: "resnet18_vehicletypenet_pruned.etlt_b200_gpu0_int8.engine"
 input [
   {
