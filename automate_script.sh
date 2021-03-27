@@ -40,15 +40,13 @@ cd ~/..
 # moving config files
 git clone https://github.com/AshishSardana/ds_triton.git
 
-cd ds_triton && apt-get install git-lfs && git lfs install && git lfs pull
+cp /ds_triton/engine_bs/config_infer_primary_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/config_infer_primary_trafficcamnet.txt
 
-cp engine_bs/config_infer_primary_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/config_infer_primary_trafficcamnet.txt
+cp /ds_triton/engine_bs/deepstream_app_source1_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_trafficcamnet.txt
 
-cp engine_bs/deepstream_app_source1_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_trafficcamnet.txt
+cp /ds_triton/engine_bs/config_infer_secondary_vehicletypenet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/config_infer_secondary_vehicletypenet.txt
 
-cp engine_bs/config_infer_secondary_vehicletypenet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/config_infer_secondary_vehicletypenet.txt
-
-cp engine_bs/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt
+cp /ds_triton/engine_bs/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt
 
 # creating the engine files
 deepstream-app -c /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_trafficcamnet.txt
