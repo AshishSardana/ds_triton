@@ -48,52 +48,44 @@ cp /ds_triton/engine_bs/config_infer_secondary_vehicletypenet.txt /opt/nvidia/de
 
 cp /ds_triton/engine_bs/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt
 
-# creating the engine files
+# generating the engine files
 deepstream-app -c /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_trafficcamnet.txt
 
 deepstream-app -c /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_dashcamnet_vehiclemakenet_vehicletypenet.txt
 
 #################################################################################################################################
 
-# moving to the samples dir
-cd /opt/nvidia/deepstream/deepstream-5.1/samples/
-
-#install ffmpeg
+# preparing video samples
 apt-get update && apt-get install -y ffmpeg
 
-# Preparing video samples.
+cd /opt/nvidia/deepstream/deepstream-5.1/samples/
+
 ./prepare_classification_test_video.sh
 
-# All the sample models will be downloaded/generated into samples/trtis-model-repo directory.
-# We dont need to download/generate all the model thus commenting this command.
-#./prepare_ds_trtis_model_repo.sh
+# move the engine, config and label files
 
-# move the engine file and the config and label file.
 mkdir -p trtis_model_repo/trafficcamnet/1
-
 mkdir -p trtis_model_repo/Secondary_VehicleTypes/1
 
 cd /opt/nvidia/deepstream/deepstream-5.1/samples/
 
 cp models/tlt_pretrained_models/trafficcamnet/resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine trtis_model_repo/trafficcamnet/1/resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine
-
 cp models/tlt_pretrained_models/vehicletypenet/resnet18_vehicletypenet_pruned.etlt_b200_gpu0_int8.engine trtis_model_repo/Secondary_VehicleTypes/1/resnet18_vehicletypenet_pruned.etlt_b200_gpu0_int8.engine
 
-# moving the config.txt and source files
+# moving the model and app config files
 cd ~/..
 
 cp ds_triton/config/config_infer_primary_trafficcamnet_triton.txt opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/config_infer_primary_trafficcamnet_triton.txt
-
 cp ds_triton/config/config_infer_secondary_plan_engine_vehicletypes.txt opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/config_infer_secondary_plan_engine_vehicletypes.txt
-
 cp ds_triton/config/source1_primary_trafficcamnet_vehicletypenet.txt opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/source1_primary_trafficcamnet_vehicletypenet.txt
 
-# copy the config.pbtxt for trafficcamnet
+# copy the config.pbtxt and labels.txt for trafficcamnet
 cp ds_triton/trafficcamnet_config.pbtxt /opt/nvidia/deepstream/deepstream-5.1/samples/trtis_model_repo/trafficcamnet/config.pbtxt
+cp ds_triton/labels_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/trtis_model_repo/trafficcamnet/labels.txt
 
-cp ds_triton/labels.txt /opt/nvidia/deepstream/deepstream-5.1/samples/trtis_model_repo/trafficcamnet/labels.txt
-
-# copy the config.pbtxt for vehicletypent
+# copy the config.pbtxt and labels.txt for vehicletypent
 cp ds_triton/vehicletypenet_config.pbtxt /opt/nvidia/deepstream/deepstream-5.1/samples/trtis_model_repo/Secondary_VehicleTypes/config.pbtxt
+cp ds_triton/labels_vehicletypenet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/trtis_model_repo/Secondary_VehicleTypes/labels.txt
 
+# launch application
 deepstream-app -c opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/source1_primary_trafficcamnet_vehicletypenet.txt
