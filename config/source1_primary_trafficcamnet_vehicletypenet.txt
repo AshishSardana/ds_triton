@@ -26,7 +26,7 @@ perf-measurement-interval-sec=5
 #gie-kitti-output-dir=kitti-trtis
 
 [tiled-display]
-enable=1
+enable=0
 rows=7
 columns=5
 width=1280

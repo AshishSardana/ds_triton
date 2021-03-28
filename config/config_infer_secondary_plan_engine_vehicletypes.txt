@@ -48,7 +48,7 @@ infer_config {
   }
 
   postprocess {
-    labelfile_path: "../../models/Secondary_VehicleTypes/labels.txt"
+    labelfile_path: "../../trtis_model_repo/Secondary_VehicleTypes/labels.txt"
     classification {
       threshold: 0.51
     }
