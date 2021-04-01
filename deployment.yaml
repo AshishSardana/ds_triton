@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ds-triton-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ds
+  replicas: 24
+  template:
+    metadata:
+      labels:
+        app: ds
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: deepstreamtriton
+          image: "709825985650.dkr.ecr.us-east-1.amazonaws.com/nvidia/containers/nvidia/deepstream:5.1-21.02-triton"
+          command: ["/bin/sh", "-c"]
+          args: ["git clone https://github.com/AshishSardana/ds_triton.git && cd ds_triton && bash automate_script.sh"]
+          resources:
+            limits:
+              nvidia.com/gpu: 1
+      nodeSelector: # optional if you have only a single type of MIG device in the entire cluster
+        nvidia.com/gpu.product: A100-SXM4-40GB-MIG-2g.10gb
