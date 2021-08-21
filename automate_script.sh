@@ -75,9 +75,9 @@ cp /ds_triton/vehicletypenet_config.pbtxt /opt/nvidia/deepstream/deepstream-5.1/
 cp /ds_triton/labels_vehicletypenet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/trtis_model_repo/Secondary_VehicleTypes/labels.txt
 
 # move the model and app config files of the use-case
-cp /ds_triton/config/config_infer_primary_trafficcamnet_triton.txt opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/config_infer_primary_trafficcamnet_triton.txt
-cp /ds_triton/config/config_infer_secondary_plan_engine_vehicletypes.txt opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/config_infer_secondary_plan_engine_vehicletypes.txt
-cp /ds_triton/config/source1_primary_trafficcamnet_vehicletypenet.txt opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/source1_primary_trafficcamnet_vehicletypenet.txt
+cp /ds_triton/config/config_infer_primary_trafficcamnet_triton.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/config_infer_primary_trafficcamnet_triton.txt
+cp /ds_triton/config/config_infer_secondary_plan_engine_vehicletypes.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/config_infer_secondary_plan_engine_vehicletypes.txt
+cp /ds_triton/config/source1_primary_trafficcamnet_vehicletypenet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/source1_primary_trafficcamnet_vehicletypenet.txt
 
 # launch application
-deepstream-app -c opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/source1_primary_trafficcamnet_vehicletypenet.txt
+deepstream-app -c /opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/source1_primary_trafficcamnet_vehicletypenet.txt
