@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 cd /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models
 
 # download trafficcamnet
